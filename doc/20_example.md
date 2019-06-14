@@ -1,3 +1,3 @@
 ## minimal setup
 
-```
+```nix

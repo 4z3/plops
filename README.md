@@ -1,19 +1,18 @@
-# plops (palo OPs)
+plops (palo OPs)
+================
 
 This is a palo (thats me) friendly
-[krops](https://cgit.krebsco.org/krops)
-framework.
-It creates executables
-which are run to trigger deployments.
+[krops](https://cgit.krebsco.org/krops) framework. It creates
+executables which are run to trigger deployments.
 
-The easiest way is to use it,
-is to write a
-[shell.nix](https://link.to.shell.nix)
-which defines your deployments.
+The easiest way is to use it, is to write a
+[shell.nix](https://link.to.shell.nix) which defines your deployments.
 
-## minimal setup
+minimal setup
+-------------
 
-```nix
+``` {.nix}
+
 let
   ops = import ((import <nixpkgs> {}).fetchgit {
     url = "https://github.com/mrVanDalo/plops.git";
@@ -88,13 +87,12 @@ pkgs.mkShell {
 }
 ```
 
-# `/run/keys`
+`/run/keys`
+===========
 
-the switch command includes also everything
-in `/run/keys` which can be populated using 
-`populatedTmpfs` and can be accessed via `<keys/...>`
+the switch command includes also everything in `/run/keys` which can be
+populated using `populatedTmpfs` and can be accessed via `<keys/...>`
 
 These keys will be gone after a restart of the machine.
 
-There is a module which makes it easy to handle
-theses tmpfs-keys.
+There is a module which makes it easy to handle theses tmpfs-keys.

@@ -2,7 +2,7 @@
 let
 
   # todo this should be automatic at some point in time
-  createReadme = pkgs.writeShellScriptBin "creaet-readme" /* sh */ ''
+  createReadme = pkgs.writeShellScriptBin "create-readme" /* sh */ ''
   ${pkgs.pandoc}/bin/pandoc \
                  -s \
                  ${toString ./doc/10_intro.md} \
@@ -18,6 +18,7 @@ pkgs.mkShell {
 
   buildInputs = with pkgs; [
     pkgs.haskellPackages.pandoc
+    createReadme
   ];
 
   shellHook = ''
