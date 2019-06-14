@@ -7,9 +7,9 @@ let
                  -s \
                  ${toString ./doc/10_intro.md} \
                  ${toString ./doc/20_example.md} \
-                 ${toString ./example.nix} \
+                 ${toString ./example/shell.nix} \
                  ${toString ./doc/21_example.md} \
-                 ${toString ./doc/50_keys.md} \
+                 ${toString ./doc/50_tmpfs.md} \
                  -f markdown -t markdown \
                  -o ${toString ./README.md}
   '';
