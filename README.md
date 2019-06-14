@@ -1,21 +1,26 @@
 # plops (palo OPs)
 
-This is pore palo (thats me) friendly 
+This is a palo (thats me) friendly
 [krops](https://cgit.krebsco.org/krops)
 framework.
+It creates executables
+which are run to trigger deployments.
 
-This framework creates executables
-which are run to trigger the deployment.
-
-The easiest way is to use a 
+The easiest way is to use it,
+is to write a
 [shell.nix](https://link.to.shell.nix)
-to write your deployment.
+which defines your deployments.
 
 ## minimal setup
 
 ```nix
 let
-  ops = import ./plops.nix;
+  ops = import ((import <nixpkgs> {}).fetchgit {
+    url = "https://github.com/mrVanDalo/plops.git";
+    rev = "ed4308552511a91021bc979d8cfde029995a9543";
+    sha256 = "0vc1wqgxz85il8az07npnppckm8hrnvn9zlb4niw1snmkd2jjzx8";
+  });
+
   lib = ops.lib;
   pkgs = ops.pkgs;
 
