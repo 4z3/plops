@@ -2,7 +2,7 @@
 
 `plops` can populate your files and folders everywhere you want.
 It comes with a function `populateTmpfs`
-which populates the files and folders in `/run/keys/<name>`.
+which populates the files and folders in `/run/plops-secrets/<name>`.
 So these keys will be gone after a restart of the machine.
 
 You can reference theses folder in your `configuration.nix`

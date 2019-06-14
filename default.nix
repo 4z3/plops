@@ -37,7 +37,7 @@ core = {
                   ${target.user}@${target.host} -p ${target.port} \
                   nixos-rebuild switch \
                   -I ${target.path} \
-                  -I "/run/keys"
+                  -I "/run/plops-secrets"
   '';
 };
 
@@ -59,7 +59,7 @@ ops = {
   populateTmpfs = sources: target:
   with lib;
   let
-    tmpfs = "/run/keys/";
+    tmpfs = "/run/plops-secrets/";
   in
   core.populate (target // { path = tmpfs; }) sources;
 
