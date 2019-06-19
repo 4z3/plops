@@ -1,3 +1,4 @@
+args:
 let
 
 hostPkgs = import <nixpkgs> {};
@@ -10,7 +11,7 @@ krops = hostPkgs.fetchgit {
 };
 
 lib = import "${krops}/lib";
-pkgs = import "${krops}/pkgs" {};
+pkgs = import "${krops}/pkgs" args;
 
 # interface to krops
 core = {
@@ -67,6 +68,11 @@ ops = {
 
 in
 {
-  inherit lib pkgs core importJson;
+  inherit lib core importJson pkgs;
   inherit (ops) populate switch jobs populateTmpfs;
+
+  # todo improve this
+  # separate to make ti overwritable
+  #pkgs = import "${krops}/pkgs";
+
 }
