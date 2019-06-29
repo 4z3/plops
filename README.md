@@ -2,7 +2,7 @@ plops (palo OPs)
 ================
 
 This is a palo (thats me) friendly
-[krops](https://cgit.krebsco.org/krops) framework. It creates
+[krops](https://cgit.krebsco.de/krops) framework. It creates
 executables which are run to trigger deployments.
 
 The easiest way is to use it, is to write a
